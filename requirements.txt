@@ -1,5 +1,0 @@
-streamlit==1.30.0
-pandas
-numpy
-scikit-learn==1.3.2
-pickle5
