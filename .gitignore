@@ -1,0 +1,42 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Generated model artifacts (reproducible via `python -m hotel_cancel.train`)
+models/*.pkl
+
+# Generated reports / figures
+reports/figures/*.png
+
+# Processed data (derived from data/raw/)
+data/processed/*
+!data/processed/.gitkeep
+
+# Keep placeholder dirs
+!models/.gitkeep
+!reports/figures/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

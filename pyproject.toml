@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hotel-cancel"
+version = "1.0.0"
+description = "Hotel booking cancellation predictor (scikit-learn + Streamlit)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "streamlit",
+    "joblib",
+    "matplotlib",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "black",
+    "pre-commit",
+]
+
+[project.scripts]
+hotel-cancel-train = "hotel_cancel.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Imports follow a sys.path tweak so the app runs without installing the package.
+"app/streamlit_app.py" = ["E402"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+extend-exclude = "notebooks"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

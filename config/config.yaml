@@ -1,0 +1,26 @@
+# Configuration for the hotel cancellation model.
+# Paths are relative to the project root and resolved automatically.
+
+data:
+  raw_path: data/raw/hotel_booking.csv
+  target: is_canceled
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  # Regularised so the saved model stays small enough for free-tier hosting.
+  n_estimators: 200
+  max_depth: 20
+  min_samples_leaf: 10
+  class_weight: balanced
+  random_state: 42
+  n_jobs: -1
+
+artifacts:
+  model_dir: models
+  pipeline_file: pipeline.pkl
+  metadata_file: metadata.pkl
+  reports_dir: reports
+  figures_dir: reports/figures

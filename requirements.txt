@@ -1,4 +1,9 @@
-streamlit
+# Runtime dependencies. For development extras (pytest, ruff, black,
+# pre-commit) install the package with: pip install -e ".[dev]"
 pandas
 numpy
 scikit-learn
+streamlit
+joblib
+matplotlib
+pyyaml
